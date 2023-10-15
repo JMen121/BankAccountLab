@@ -56,35 +56,17 @@
 
       public void deposit(int amount){
         this.balance+=amount;
+        if (amount>=0){
+            System.out.println("Deposit of $" + amount + " successful. New balance: $" + this.balance);
+        }
       }
 
       public void withdraw(int amount) {
         this.balance -= amount;
-      }
-
-//method
-      /*public void deposit(int amount) {
-          if (amount > 0) {
-              this.balance += amount; //if the amount is greater than zero it adds the amount to thr balance
-              System.out.println("Deposit of $" + amount + " successful. New balance: $" + this.balance);
-          } else {
-              System.out.println("Invalid deposit amount. Amount must be greater than 0.");
-          }
-      }
-
-
-     /*public void withdrawal(int amount){
-        if (amount > 5) {
-            amount -= this.balance;
-            System.out.println("Withdrawal of $" + amount + "successful. New balance:$" + this.balance);
-        } else{
-            System.out.println("Invalid Withdrawal. Only allowed to take more than £5");
+        if (amount<=0){
+            System.out.println("Invalid funds. Your account is currently"+ this.balance);
         }
-      }*/
-
-
-    // Create a method called withdrawal() that takes in an amount and updates the balance of the BankAccount object.
-      //if you are withdrwwing that means your bankaccount will minus
+      }
       }
 
 

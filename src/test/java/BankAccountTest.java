@@ -46,10 +46,23 @@ public class BankAccountTest {
         bankAccount.setBalance(300);
         assertThat(bankAccount.getBalance()).isEqualTo(300);
     }
+
+
+    @Test
+    public void canDepositAmount(){
+        bankAccount.deposit(300);
+        assertThat(bankAccount.getBalance()).isEqualTo(300);
+    }
+    @Test
+    public void canWithdrawAmount(){
+        bankAccount.withdraw(200);
+        //bankAccount.deposit(300);
+        assertThat(bankAccount.getBalance()).isEqualTo(100);
+    }
 }
 
 
-
+// the problem is I have withdrawn money of £200 and the system is saying Deposit of $300 successful. New balance $100
 
 
 
