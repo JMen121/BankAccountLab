@@ -1,22 +1,19 @@
-import java.time.LocalDate;
-
-
-  //the class
+//the class
     public class BankAccount {
 
       private String firstName;
         private String lastName;
-        private LocalDate dateOfBirth;
-        private int accountNumber;
+        private String dateOfBirth;
+        private String accountNumber;   //this could be a string because int is used when doing calculations
         private int balance;
 
         //Down below is the Constructor to intialisze the BankAccount Object
-    public BankAccount(String firstName, String lastName,  LocalDate dateOfBirth, int accountNumber,int balance){
+    public BankAccount(String firstName, String lastName, String dateOfBirth, String accountNumber){
         this.firstName = firstName;
         this.lastName  = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.accountNumber = accountNumber;
-        this.balance = balance;
+        this.accountNumber =accountNumber;
+        this.balance = 0;
     }
 //getter
     public String getFirstName(){
@@ -28,11 +25,11 @@ import java.time.LocalDate;
       public void setFirstName(String firstName){
           this.firstName= firstName;
       }
-    public int getAccountNumber(){
+    public String getAccountNumber(){
         return accountNumber;
     }
 
-      public void setAccountNumber(int accountNumber) {
+      public void setAccountNumber(String accountNumber) {
           this.accountNumber = accountNumber;
       }
 
@@ -40,11 +37,11 @@ import java.time.LocalDate;
           this.lastName = lastName;
       }
 
-      public LocalDate getDateOfBirth() {
+      public String getDateOfBirth() {
           return dateOfBirth;
       }
 
-      public void setDateOfBirth(LocalDate dateOfBirth) {
+      public void setDateOfBirth(String dateOfBirth) {
           this.dateOfBirth = dateOfBirth;
       }
 
@@ -57,8 +54,16 @@ import java.time.LocalDate;
       }
 
 
+      public void deposit(int amount){
+        this.balance+=amount;
+      }
+
+      public void withdraw(int amount) {
+        this.balance -= amount;
+      }
+
 //method
-      public void deposit(int amount) {
+      /*public void deposit(int amount) {
           if (amount > 0) {
               this.balance += amount; //if the amount is greater than zero it adds the amount to thr balance
               System.out.println("Deposit of $" + amount + " successful. New balance: $" + this.balance);
@@ -68,16 +73,17 @@ import java.time.LocalDate;
       }
 
 
-      public void withdrawal(int amount){
+     /*public void withdrawal(int amount){
         if (amount > 5) {
             amount -= this.balance;
             System.out.println("Withdrawal of $" + amount + "successful. New balance:$" + this.balance);
         } else{
             System.out.println("Invalid Withdrawal. Only allowed to take more than £5");
         }
-      }
+      }*/
 
-     // Create a method called withdrawal() that takes in an amount and updates the balance of the BankAccount object.
+
+    // Create a method called withdrawal() that takes in an amount and updates the balance of the BankAccount object.
       //if you are withdrwwing that means your bankaccount will minus
       }
 
