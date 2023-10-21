@@ -11,7 +11,7 @@ public class BankAccountTest {
     @BeforeEach
     public void setBankAccount() {
         bankAccount= new BankAccount("Janet","Mensah",
-                "22-02-2001", "23343453");
+                "22-02-2001", "23343453", 100);
     }
 
 
@@ -27,18 +27,18 @@ public class BankAccountTest {
     }
 
     @Test
-    public void canGetdateOfBirth(){
+    public void canGetDateOfBirth(){
         assertThat(bankAccount.getDateOfBirth()).isEqualTo("22-02-2001");
     }
 
     @Test
-    public void canGetaccountNumber(){
+    public void canGetAccountNumber(){
         assertThat(bankAccount.getAccountNumber()).isEqualTo("23343453");
     }
 
     @Test
-    public void canGetbalance(){
-        assertThat(bankAccount.getBalance()).isEqualTo(0);
+    public void canGetBalance(){
+        assertThat(bankAccount.getBalance()).isEqualTo(100);
     }
 
     @Test
@@ -49,20 +49,18 @@ public class BankAccountTest {
 
 
     @Test
-    public void canDepositAmount(){
+    public void canDepositMoney(){
         bankAccount.deposit(300);
-        assertThat(bankAccount.getBalance()).isEqualTo(300);
+        assertThat(bankAccount.getBalance()).isEqualTo(400);
     }
-    @Test
-    public void canWithdrawAmount(){
-        bankAccount.withdraw(200);
-        //bankAccount.deposit(300);
-        assertThat(bankAccount.getBalance()).isEqualTo(100);
+
+   @Test
+    public void canWithdrawMoney(){
+        bankAccount.withdrawal(10);
+        assertThat(bankAccount.getBalance()).isEqualTo(90);
     }
 }
 
-
-// the problem is I have withdrawn money of £200 and the system is saying Deposit of $300 successful. New balance $100
 
 
 
